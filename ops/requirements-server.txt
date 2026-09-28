@@ -1,0 +1,18 @@
+# 서버(컨테이너)에서 ML 콘솔 API 와 에이전트가 쓰는 의존성 (2026-09-28)
+#
+# backend/requirements.txt 는 화면 API 최소분이다. 재학습·에이전트 엔드포인트가
+# agent/ 와 ml_train_kit_2 를 import 하므로 서버에는 이만큼이 필요하다.
+#
+# ★ 버전을 아직 못 박았다. 배치가 도는 PC 에서 `pip freeze` 로 확인해
+#   아래에 == 로 고정할 것 — 같은 모델이 다른 lightgbm 에서 다른 값을 낼 수 있다.
+fastapi
+uvicorn[standard]
+psycopg[binary]
+numpy
+pandas
+lightgbm
+scikit-learn
+langgraph
+langgraph-checkpoint-sqlite
+google-genai
+anthropic
